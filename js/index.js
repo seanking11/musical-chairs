@@ -1,27 +1,31 @@
+var totalChairs = 6
+var amtOfPlayers = 6
+// Start with 6 players
 
 $(".btn").on("click", function() {
-  generateState(5)
+  generateState(amtOfPlayers)
 })
 
 function generateState(numOfPlayers) {
   var arrBools = [] // Initialize
 
   // Set all to false
-  for(var i = 0; i < numOfPlayers; i++) {
+  for(var i = 0; i < totalChairs; i++) {
     arrBools[i] = false
   }
 
   var count = 0
 
-  for(var i = 0; i < numOfPlayers; i++) {
+  while(count < numOfPlayers - 1) {
     var choice = getRandomInt(0, numOfPlayers - 1)
 
-    if (arrBools[choice] === false && count < numOfPlayers) {
+    if (arrBools[choice] === false) {
       arrBools[choice] = true
       count++
+      console.log(choice, "setting true")
+    } else {
+      console.log(choice, "was false")
     }
-
-    console.log(choice)
   }
 
   console.log(arrBools)
@@ -30,27 +34,3 @@ function generateState(numOfPlayers) {
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
-/*
-if (choice == 0 && count > numRounds - 1) {
-  arrBools[i] = false
-} else
-*/
-
-/*
-for(var i = 0; i < numRounds - 1; i++) {
-  var choice = Math.round(Math.random()) // 0 or 1
-
-  if (choice == 1 && count < numRounds - 1) {
-    count++
-    arrBools[i] = true
-    console.log('count', count)
-    console.log('arrBools', arrBools)
-  } else {
-    arrBools[i] = false
-    console.log('count', count)
-    console.log('arrBools', arrBools)
-  }
-}
-*/
