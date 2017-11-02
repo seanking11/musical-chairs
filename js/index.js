@@ -24,7 +24,7 @@ function generateState(numOfPlayers) {
       count++
       console.log(choice, "setting true")
     } else {
-      console.log(choice, "was false")
+      console.log(choice, "was already true")
     }
   }
 
