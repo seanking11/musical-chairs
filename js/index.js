@@ -1,36 +1,23 @@
-var totalChairs = 6
-var amtOfPlayers = 6
-// Start with 6 players
+var audioMusic = document.getElementById('audioMusic');
+var audioDing = document.getElementById('audioDing');
+var audioBuzz = document.getElementById('audioBuzz');
 
-$(".btn").on("click", function() {
-  generateState(amtOfPlayers)
+$('.input').on('input', function(){
+  var value = $(this).val();
+  if (value.substr(-1) == 'p') {
+    // Play music
+    audioMusic.currentTime = 0;
+    audioMusic.play();
+  } else if (value.substr(-1) == 'k') {
+    // Stop music
+    audioMusic.pause();
+  } else if (value.substr(-1) == 'z') {
+    // Valid sit
+    audioDing.currentTime = 0.1;
+    audioDing.play();
+  } else if (value.substr(-1) == 'x') {
+    // invalid sit
+    audioBuzz.currentTime = 1;
+    audioBuzz.play();
+  }
 })
-
-function generateState(numOfPlayers) {
-  var arrBools = [] // Initialize
-
-  // Set all to false
-  for(var i = 0; i < totalChairs; i++) {
-    arrBools[i] = false
-  }
-
-  var count = 0
-
-  while(count < numOfPlayers - 1) {
-    var choice = getRandomInt(0, numOfPlayers - 1)
-
-    if (arrBools[choice] === false) {
-      arrBools[choice] = true
-      count++
-      console.log(choice, "setting true")
-    } else {
-      console.log(choice, "was already true")
-    }
-  }
-
-  console.log(arrBools)
-}
-
-function getRandomInt(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
