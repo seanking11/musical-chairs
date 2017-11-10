@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  background-color: #01BCD4;
+  font-family: 'Roboto', sans-serif;
+}
+
+.flex-container2 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  width: 100%;
+}
+
+.background {
+  width: 100%;
+  height: auto;
+}
+
+.background-img {
+  /*background: url('../img/chairs.png');*/
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  margin-top: 20px;
+  background: transparent;
+  border: .25px solid white;
+  color: rgba(72, 126, 208, 0.2);
+}
+
+.input:focus {
+  outline-color: #01BCD4;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 600;
+  color: white;
+}
