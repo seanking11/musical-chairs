@@ -16,8 +16,12 @@ $('.input').on('input', function(){
     audioDing.currentTime = 0.1;
     audioDing.play();
   } else if (value.substr(-1) == 'x') {
-    // invalid sit
+    // Invalid sit
     audioBuzz.currentTime = 1;
     audioBuzz.play();
+  } else if (value.substr(-1) == 'y') {
+    // Win
+    audioWin.currentTime = 0;
+    audioWin.play();
   }
 })
